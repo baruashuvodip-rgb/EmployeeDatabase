@@ -6,7 +6,13 @@ Hal Jordan
 8000.0
 4
 Bruce Wayne
-40000
+40000.0
 5
 Clark Kent
 10000.0
+5
+Penelope Potts
+20000
+6
+Jessica Jones
+6000
