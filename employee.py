@@ -1,5 +1,5 @@
 class employee:
-    def __init__(self, employeeID="0000", firstname="J.", lastname="Doe", salary=0):
+    def __init__(self, employeeID="0", firstname="J.", lastname="Doe", salary=0.0):
         self.employeeID = employeeID
         self.firstname = firstname
         self.lastname = lastname
@@ -13,6 +13,6 @@ class employee:
     def setID(self, employeeID):
         self.employeeID = employeeID
     def getSalary(self):
-        self.salary = float(input("Enter salary: "))
+        self.salary = (input("Enter salary: "))
     def setSalary(self, salary):
         self.salary = salary
