@@ -1,27 +1,30 @@
 1
 Jimmy Neutron
-5800.0
+5800
 2
 Testname Bossman
-50000.0
+50000
 3
 Hal Jordan
-8000.0
+8000
 4
 Bruce Wayne
-40000.0
+40000
 5
 Penelope Potts
-20000.0
+20000
 6
-Jessica Jones
-6000.0
+Jessica Simpson
+6500
 7
 Daniel Rand
-7500.0
+7500
 8
 Jonathan Harker
-4500.0
+4500
 9
 Solomon Grundy
-3000.0
+3000
+10
+Benjamin Watson
+7600

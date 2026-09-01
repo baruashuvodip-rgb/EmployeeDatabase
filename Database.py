@@ -1,9 +1,11 @@
 import employee
 import read_database
+
+#Call/read existing database?
 people = read_database.read_database()
 
 program_on = True
-#Call/read existing database?
+
 #Menu for selecting what user wants to do
 while(program_on):
     print("Welcome to the Employee Database. What would you like to do?\n")
