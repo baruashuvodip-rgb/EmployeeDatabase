@@ -10,9 +10,11 @@ class employee:
         self.firstname = firstname
     def setlastname(self, lastname):
         self.lastname = lastname
+    def getID(self):
+        self.employeeID = input("Enter employee ID: ")
     def setID(self, employeeID):
         self.employeeID = employeeID
     def getSalary(self):
-        self.salary = (input("Enter salary: "))
+        self.salary = float(input("Enter salary: "))
     def setSalary(self, salary):
         self.salary = salary
