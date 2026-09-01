@@ -8,10 +8,8 @@
 
 using namespace std;
 
-
-// =====================================================
 // Employee CLASS
-// =====================================================
+// for holding int id, string name and float salary in one object
 
 class Employee {
 
@@ -24,18 +22,17 @@ public:
 
     Employee(int id, string name, double salary);
 
-    int getID() const;
-    string getName() const;
-    double getSalary() const;
+    int getID();
+    string getName();
+    double getSalary();
 
     void setName(string name);
     void setSalary(double salary);
 
-    void display() const;
+    void display();
 };
 
-
-// Constructor
+// Constructor function
 Employee::Employee(int id, string name, double salary) {
 
     this->id = id;
@@ -43,22 +40,20 @@ Employee::Employee(int id, string name, double salary) {
     this->salary = salary;
 }
 
-
-// Getters
-int Employee::getID() const {
+// Getting values without changing them
+int Employee::getID() {
     return id;
 }
 
-string Employee::getName() const {
+string Employee::getName() {
     return name;
 }
 
-double Employee::getSalary() const {
+double Employee::getSalary() {
     return salary;
 }
 
-
-// Setters
+// Setting/changing values
 void Employee::setName(string name) {
     this->name = name;
 }
@@ -67,9 +62,8 @@ void Employee::setSalary(double salary) {
     this->salary = salary;
 }
 
-
-// Display employee
-void Employee::display() const {
+// Display employee information
+void Employee::display() {
 
     cout << "Employee ID: " << id << endl;
     cout << "Name: " << name << endl;
@@ -77,10 +71,8 @@ void Employee::display() const {
 }
 
 
-
-// =====================================================
 // EmployeeDatabase CLASS
-// =====================================================
+// functions for manipulating employee information in text file
 
 class EmployeeDatabase {
 
@@ -93,12 +85,7 @@ private:
 
 public:
 
-    EmployeeDatabase::EmployeeDatabase(string filename) {
-
-    this->filename = filename;
-
-    loadFromFile();
-}
+    EmployeeDatabase(string filename);
 
     void loadFromFile();
     void saveToFile();
@@ -111,10 +98,13 @@ public:
     void deleteEmployee(int id);
 };
 
+// Constructor function
+EmployeeDatabase::EmployeeDatabase(string filename) {
 
-// Constructor
+    this->filename = filename;
 
-
+    loadFromFile();
+}
 
 // Find employee by ID
 int EmployeeDatabase::findEmployee(int id) {
@@ -129,8 +119,7 @@ int EmployeeDatabase::findEmployee(int id) {
     return -1;
 }
 
-
-// Load employees from file
+// Load employees from file to object
 void EmployeeDatabase::loadFromFile() {
 
     ifstream file(filename);
@@ -158,8 +147,7 @@ void EmployeeDatabase::loadFromFile() {
     file.close();
 }
 
-
-// Save employees to file
+// Save employees to file from object
 void EmployeeDatabase::saveToFile() {
 
     ofstream file(filename);
@@ -179,8 +167,7 @@ void EmployeeDatabase::saveToFile() {
     file.close();
 }
 
-
-// Display one employee
+// Display one employee by id
 void EmployeeDatabase::displayEmployee(int id) {
 
     int index = findEmployee(id);
@@ -194,27 +181,7 @@ void EmployeeDatabase::displayEmployee(int id) {
     employees[index].display();
 }
 
-
-// Display all employees
-void EmployeeDatabase::displayAll() {
-
-    if (employees.empty()) {
-        cout << "No employees in database." << endl;
-        return;
-    }
-
-    cout << "\n===== All Employees =====\n";
-
-    for (const Employee& employee : employees) {
-
-        cout << "\n------------------\n";
-
-        employee.display();
-    }
-}
-
-
-// Add employee
+// Add new employee object
 void EmployeeDatabase::addEmployee() {
 
     int id;
@@ -246,8 +213,7 @@ void EmployeeDatabase::addEmployee() {
     cout << "Employee added successfully." << endl;
 }
 
-
-// Modify employee
+// Modify employee information
 void EmployeeDatabase::modifyEmployee(int id) {
 
     int index = findEmployee(id);
@@ -282,8 +248,7 @@ void EmployeeDatabase::modifyEmployee(int id) {
     cout << "Employee updated successfully." << endl;
 }
 
-
-// Delete employee
+// Delete employee object
 void EmployeeDatabase::deleteEmployee(int id) {
 
     int index = findEmployee(id);
