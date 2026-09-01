@@ -22,9 +22,9 @@ public:
 
     Employee(int id, string name, double salary);
 
-    int getID();
-    string getName();
-    double getSalary();
+    int getID() const;
+    string getName() const;
+    double getSalary() const;
 
     void setName(string name);
     void setSalary(double salary);
@@ -41,15 +41,15 @@ Employee::Employee(int id, string name, double salary) {
 }
 
 // Getting values without changing them
-int Employee::getID() {
+int Employee::getID() const {
     return id;
 }
 
-string Employee::getName() {
+string Employee::getName() const {
     return name;
 }
 
-double Employee::getSalary() {
+double Employee::getSalary() const {
     return salary;
 }
 
@@ -76,14 +76,12 @@ void Employee::display() {
 
 class EmployeeDatabase {
 
-private:
+public:
 
     vector<Employee> employees;
     string filename;
 
     int findEmployee(int id);
-
-public:
 
     EmployeeDatabase(string filename);
 
